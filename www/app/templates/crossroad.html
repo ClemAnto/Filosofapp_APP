@@ -1,0 +1,28 @@
+<div ng-controller="CrossroadCtrl" class="viewport crossroad">
+
+    <div class="bg-cover" style="background-image: url('img/{{currentScene.background}}')">
+
+        <div class="bubble-position bubble-top">
+            <div    ng-show="currentScene.text"
+                    class="bubble"
+                    ng-class="currentScene.textClass"
+                    ng-bind-html="currentScene.text">
+            </div>
+        </div>
+
+        <div class="choices row responsive-sm padding">
+
+            <div class="col">
+                <button class="button button-block" ng-class="currentScene.choiseA.class" ng-click="goScene(currentScene.choiseA.scene)">{{currentScene.choiseA.label}}</button>
+            </div>
+
+
+            <div class="col">
+                <button class="button button-block" ng-class="currentScene.choiseB.class" ng-click="goScene(currentScene.choiseB.scene)">{{currentScene.choiseB.label}}</button>
+            </div>
+
+        </div>
+
+    /</div>
+
+</div>

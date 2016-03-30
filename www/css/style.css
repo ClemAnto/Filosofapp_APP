@@ -1,0 +1,511 @@
+.map-canvas {
+    background-color: #A9CED7;
+}
+
+.marker {
+    position: absolute;
+    font-size: 6em;
+    color: transparent;
+}
+
+.video-container {
+    /*
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+    */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+
+}
+
+.video-container.minimized {
+
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.video-container.minimized .button-next {
+    opacity: 0;
+}
+
+.video-container .button-next {
+    opacity: 1;
+    -webkit-transition: 1s opacity ease-out 1s;
+    transition: 1s opacity ease-out 1s;
+}
+
+.video-container.minimized iframe {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    /*
+    pointer-events:none;
+    */
+    z-index: 0;
+}
+
+.video-container iframe {
+    -webkit-transition: 1s -webkit-transform ease-out;
+    -webkit-transform: scale(1);
+
+    transition: 1s transform ease-out;
+    transform: scale(1);
+}
+
+.button-video-play {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 100;
+}
+
+.button-video-play i {
+    color: #FFF;
+    text-shadow: 0 1px 0 #000;
+}
+
+.minimized .button-next {
+    opacity: 0;
+}
+
+.button-next {
+    -webkit-transition: 1s opacity ease-out;
+    transition: 1s opacity ease-out;
+    opacity: 1;
+}
+
+/* Monti Elpìs */
+.marker-elpis {
+    top: 52px;
+    left: 616px;
+}
+
+/* Agapé */
+.marker-agape {
+    top: 326px;
+    left: 615px;
+}
+
+/* Paludi Menis */
+.marker-menis {
+    top: 336px;
+    left: 986px;
+}
+
+/* Laghi Fobos */
+.marker-fobos {
+    top: 359px;
+    left: 330px;
+}
+
+/* Baia Thauma */
+.marker-thauma {
+    top: 522px;
+    left: 548px;
+}
+
+/* Karà */
+.marker-kara {
+    top: 182px;
+    left: 346px;
+}
+
+/* Arcipelago Lype */
+.marker-lype {
+    top: 591px;
+    left: 248px;
+}
+
+/* Golfo di Aidos */
+.marker-aidos {
+    top: 519px;
+    left: 817px;
+}
+
+/* Story */
+.story-left {
+    min-height: 20rem;
+    min-height: 70vh;
+    padding: 0;
+}
+
+.story-right {
+    padding: 0;
+    padding-left: 10px;
+}
+
+@media (max-width: 567px) {
+    .responsive-sm .story-right {
+        padding: 0;
+
+    }
+}
+
+.story-text {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+/* Bubbles */
+.bubble {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 1.5rem;
+    padding: 2vh;
+    background: #FAFAFA;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: #FE7938 solid 0.2rem;
+    min-height: 4rem;
+    min-height: 14vh;
+    /*padding-bottom: 2rem;*/
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-size: 4vh;
+    line-height: 1.5rem;
+    line-height: 4vh;
+    /*-webkit-transform: rotate(-0.7deg);*/
+    /*transform: rotate(-0.7deg);*/
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    color: #692200;
+}
+
+.bubble-position {
+    position: absolute;
+    bottom: 0em;
+    width: calc(100% - 2rem);
+    width: calc(100% - 3vh);
+}
+
+.bubble-position.bubble-top .bubble:after,
+.bubble-position.bubble-top .bubble:before {
+    display: none;
+}
+
+.bubble-position .button-next {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #FE7938!important;
+    padding: 0 1rem;
+}
+
+.bubble-dialog-right .button-next {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #FE7938!important;
+    padding: 0 1rem;
+}
+
+.bubble-dialog-left {
+    left: 1em;
+    left: 2vw;
+    padding-left: 5rem;
+    padding-left: 20vh;
+}
+
+.bubble-dialog-right {
+    right: 1em;
+    right: 2vw;
+    padding-right: 5rem;
+    padding-right: 20vh;
+}
+
+.bubble-position:before {
+    content: " ";
+    position: absolute;
+    background-size: cover;
+    width: 4rem;
+    width: 20vh;
+    height: 4rem;
+    height: 20vh;
+    display: block;
+    bottom: 0;
+}
+
+.bubble-dialog-right:before { right:0; }
+.bubble-dialog-left:before { left: 0;  }
+
+.bubble-position-ragazzo:before { background: url(../img/avatar_user.png); background-size: cover;}
+.bubble-position-talete:before { background: url(../img/avatar_talete.png); background-size: cover;}
+
+.bubble-top,
+.bubble-dialog-top {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    top: 1.5vh;
+    left: 1.5vh;
+}
+
+.bubble-talete {
+}
+
+.bubble:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0.8rem 0 0.8rem 0.8rem;
+    border-color: transparent #FAFAFA;
+    display: block;
+    width: 0;
+    z-index: 1;
+    bottom: 1rem;
+}
+
+.bubble:before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 1rem 0 1rem 1rem;
+    border-color: transparent #FE7938;
+    display: block;
+    width: 0;
+    z-index: 0;
+    bottom: 0.8rem;
+}
+
+.bubble-dialog-left .bubble:after {
+    left: -0.8rem;
+    transform: rotate(180deg);
+    margin: 0.5px;
+}
+
+.bubble-dialog-left .bubble:before {
+    left: -1rem;
+    transform: rotate(180deg);
+}
+
+.bubble-dialog-right .bubble:before {
+    right: -1rem;
+}
+
+.bubble-dialog-right .bubble:after {
+    right: -0.8rem;
+    margin: 0.5px;
+}
+
+.bubble-dialog-top .bubble:after {
+    transform: rotate(90deg) translateY(50%);
+    bottom: auto;
+    top: calc(100% - 0.4rem);
+    left: calc(50% - 7px);
+}
+
+.bubble-dialog-top .bubble:before {
+    transform: rotate(90deg) translateY(50%);
+    bottom: auto;
+    top: calc(100% - 0.1rem - 6px);
+    left: calc(50% - 4px);
+}
+
+.bubble-bottom {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    bottom: 1.5vh;
+    left: 1.5vh;
+}
+
+.bubble-bottom .bubble:after,
+.bubble-bottom .bubble:before {
+    display: none;
+}
+
+.button-left {
+}
+
+.button-right {
+}
+
+.button-top {
+    position: absolute;
+    top: 2em;
+    left: 20em;
+}
+
+.button-bottom {
+    position: absolute;
+    bottom: 0;
+    margin: 0.2em;
+}
+
+.button-story {
+    float: right;
+}
+
+/* COMMON */
+.bg-cover {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+.bg-cover-abstract {
+    background-image: url('/../img/bgabstract.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat-x;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.viewport {
+    width: 100vw;
+    height: 100vh
+}
+
+.has-header .viewport {
+    height: calc(100vh - 44px);
+}
+
+.choices {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 10px;
+    background: rgba(76, 76, 76, 0.86);
+    z-index: 5;
+}
+
+.choices > .col {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 0;
+}
+
+.button-dialog {
+    position: static;
+    float: right;
+    margin-top: 10px;
+}
+
+
+.abstract .button-next {
+    float: right;
+}
+
+.button.button-dark {
+    text-shadow: 0 1px 0 #ef473a;
+    border-color: #ef473a;
+    background-color: #FE7938;
+    color: #FFF;
+    font-weight: bold;
+    border-bottom: 4px solid #ef473a;
+    border-radius: 2px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+}
+
+.button.button-dark.activated {
+    border-color: #ef473a;
+    background-color: #e42112;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.1);
+}
+
+.choices .button-block {
+    text-shadow: 0 1px 0 #0c60ee;
+    border-color: #0c60ee;
+    background-color: #387ef5;
+    color: #FFF;
+    font-weight: bold;
+    border-bottom: 4px solid #0c60ee;
+    border-radius: 2px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+}
+
+.choices .button-block.activated {
+}
+
+.choices .item-complex .item-content,
+.choices .item-radio .item-content {
+    background-color: #387ef5;
+    color: #EFEFEF;
+    text-shadow: 0 1px 0 #0c60ee;
+}
+
+.choices .radio-icon {
+    color: #EFEFEF;
+    text-shadow: 0 1px 0 #0c60ee;
+}
+
+.choices .item-radio input:checked + .radio-content .item-content {
+    background-color: #2470F1;
+    color: #FFF;
+    text-shadow: 0 1px 0 #000;
+}
+
+.choices .item-radio input:checked + .radio-content .radio-icon {
+    color: #FFF;
+    text-shadow: 0 1px 0 #000;
+}
+
+.choices .item {
+    border-color: #0c60ee;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    border-bottom: 4px solid #0c60ee;
+}
+
+.bar .title,
+.bar .icon {
+    text-shadow: 0 1px 0 #e42112;
+}
+
+.story > .row {
+    margin-bottom: 48px;
+}
+
+.question h4, .result h4
+
+{
+   color: #ddd !important;
+margin-bottom: 1.5rem;
+}
+
+.bg-abstract-text {
+
+    background-repeat: repeat;
+    background-image: url(/../img/bgabstract.jpg);
+
+}
+
+h4.abstract-text {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 1rem;
+
+    color: white;
+    font-weight: normal;
+    font-style: italic;
+
+}

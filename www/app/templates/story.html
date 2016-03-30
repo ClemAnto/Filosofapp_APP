@@ -1,0 +1,12 @@
+<div ng-controller="StoryCtrl" class="viewport story">
+
+    <div class="row responsive-sm padding">
+        <div class="story-left col bg-cover" style="background-image: url('img/{{currentPage.image}}')"></div>
+
+        <div class="story-right col">
+            <div ng-class="currentPage.textClass" ng-bind-html="currentPage.text"></div>
+            <button class="button button-dark button-next" ng-class="currentPage.nextClass" ng-click="goNextPage()">{{currentPage.nextLabel}}</button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,18 @@
+<div ng-controller="BiographyCtrl" class="viewport biography {{currentScene.id}}">
+
+    <div class="bg-cover" style="background-image: url('img/{{currentScene.background}}')">
+
+        <div class="bubble-position" ng-class="currentPage.positionClass">
+            <div class="bubble"
+                 ng-class="currentPage.textClass"
+                 ng-bind-html="currentPage.text"
+                 ng-click="goNextPage()">
+            </div>
+        </div>
+
+        <!--
+        <button class="button button-dark" ng-class="currentPage.nextClass" ng-click="goNextPage()">{{currentPage.nextLabel}}</button>-->
+
+    </div>
+
+</div>

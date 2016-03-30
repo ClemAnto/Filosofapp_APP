@@ -1,0 +1,10 @@
+<ion-view view-title="{{currentPlace.name}}" class="place">
+    <ion-nav-buttons side="secondary">
+        <button class="button button-clear" ng-click="goMap()">
+            <i class="icon ion-map"></i>
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div ng-include="'app/templates/' + currentScene.template"></div>
+    </ion-content>
+</ion-view>

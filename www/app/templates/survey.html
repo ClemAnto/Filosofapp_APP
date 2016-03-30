@@ -1,0 +1,19 @@
+<div ng-controller="SurveyCtrl" class="viewport survey">
+
+    <div class="bg-cover" style="background-image:url('img/{{currentScene.background}}')">
+
+        <div class="choices">
+        	<div class="question"><h4>Domanda - {{currentQuestion.text}}</h4></div>
+            <div ng-repeat="answer in currentQuestion.answers track by $index">
+                <ion-radio ng-model="data.answerSelected" ng-value="answer" ng-disabled="showingResult">{{answer.text}}</ion-radio>
+            </div>
+
+            <button ng-show="!showingResult" class="button button-dark" ng-class="currentQuestion.answerClass" ng-disabled="data.answerSelected == null" ng-click="showResult()">{{currentQuestion.answerLabel}}</button>
+
+            <div ng-show="showingResult" class="result"><h4>{{data.answerSelected.textAfter}}</h4></div>
+            <button ng-show="showingResult" class="button button-dark" ng-class="currentQuestion.answerClass" ng-disabled="!data.answerSelected" ng-click="goNextQuestion()">Avanti</button>
+        </div>
+
+    </div>
+
+</div>

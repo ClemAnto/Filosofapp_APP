@@ -1,0 +1,14 @@
+<ion-view class="place">
+    
+
+    <ion-header-bar align-title="left" class="bar-positive bar-subheader">
+		<div class="title">{{currentPlace.name}}</div>	
+		<button class="button button-clear" ng-click="goMap()">
+            <i class="icon ion-map"></i>
+        </button>
+	</ion-header-bar>
+	
+    <ion-content has-header="true" has-subheader="true">
+        <div ng-include="'app/templates/' + currentScene.template"></div>
+    </ion-content>
+</ion-view>

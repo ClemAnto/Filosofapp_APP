@@ -1,0 +1,20 @@
+
+<div ng-controller="BiographyCtrl" class="viewport biography {{currentScene.id}} {{$root.animation}}" on-swipe-left="goNextPage()">
+    
+
+    <div class="bg-cover" style="background-image: url('img/{{currentScene.background}}')">
+        <div class="debug">
+            <button class="button" ng-click="goPrevPage()">BACK</button>
+        </div>
+        
+        <div class="bubble-position" ng-class="currentPage.positionClass">
+            <div class="bubble"
+                 ng-class="currentPage.textClass"
+                 ng-bind-html="currentPage.text"
+                 ng-click="goNextPage()">
+            </div>
+        </div>
+
+    </div>
+
+</div>

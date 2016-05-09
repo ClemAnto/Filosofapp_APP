@@ -1,0 +1,14 @@
+<div ng-controller="AbstractCtrl" class="viewport abstract {{$root.animation}}" on-swipe-left="goNextScene()">
+
+        
+            
+	<div class="bg-abstract">
+	            <h4 class="abstract-text" ng-class="currentScene.textClass" ng-bind-html="currentScene.text"></h4>
+	            <button
+	                    class="button button-dark button-next" ng-class="currentPage.nextClass || DEFAULT.nextClass"
+	                    ng-click="goNextScene()">{{currentScene.nextLabel || DEFAULT.nextLabel}}</button>
+	     
+
+	</div>
+
+</div>

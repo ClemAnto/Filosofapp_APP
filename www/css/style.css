@@ -1,0 +1,902 @@
+/*FONT*/
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('../font/Oswald-Regular.ttf')  format('truetype');
+}
+
+* {
+    font-family: Oswald;
+}
+
+
+/*COLORS*/
+.bar.bar-positive {
+    background: linear-gradient(to bottom, #e91c77, #b2175b);
+    color: #fff;
+}
+
+
+
+
+/*HEADER*/
+
+.fi-icon {
+    font-size: 2rem;
+    color: #DE1B71;
+}
+
+.bar-header .title.header-item {
+    overflow: visible;
+}
+
+.nav-bar-block .bar-header:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background: url(../img/filosofappclaim.png) no-repeat 100% 50%;
+    background-size: contain;
+    top: 0;
+    overflow: hidden;
+    max-width: 150px;
+}
+
+.header-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+
+     transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+}
+
+.bar-header .header-logo {
+    height: 165%;
+    margin-top: 8px;
+    transform: translate(-50%,0);
+    left: 50%;
+    top: 0;
+    opacity: 1;
+
+   
+}
+
+.map-canvas {
+    background: url('../img/map-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    transition: filter 0.5s ease-out;
+    -webkit-transition: -webkit-filter 0.5s ease-out;
+    
+}
+
+.map-out .map-canvas {
+    filter: blur(15px);
+    -webkit-filter: blur(15px);
+    
+}
+
+.map-canvas .scroll {
+    height: 100%;
+}
+/*
+.map-view .viewport {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+
+.scroll {
+    
+}
+
+.marker {
+    position: absolute;
+    font-size: 6em;
+    color: #D61B6D;
+}
+
+.map-hit-area.locked {
+    background: url(../img/lock.png);
+    /* z-index: -1; */
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: 48% 8%;
+    opacity: 0.8;
+
+}
+
+.map-hit-area {
+    position: absolute;
+    /*border: 1px solid red;*/
+    width: 144px;
+    height: 72px;
+    margin-top: -36px;
+    margin-left: -72px;
+    display: inline-block;
+}
+
+.video-container {
+    /*
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+    */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+
+}
+
+.video-container.minimized {
+
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.video-container .button-next.ng-hide {
+    opacity: 0;
+    
+}
+
+.video-container .button-next {
+    opacity: 1;
+    display: inline-block!important;
+    -webkit-transition: 1s opacity ease-out 1s;
+    transition: 1s opacity ease-out 1s;
+}
+
+.video-container.minimized iframe {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    /*
+    pointer-events:none;
+    */
+    z-index: 0;
+}
+
+.video-container iframe {
+    -webkit-transition: 1s -webkit-transform ease-out;
+    -webkit-transform: scale(1);
+
+    transition: 1s transform ease-out;
+    transform: scale(1);
+}
+
+.dialog-clean .video-container iframe,
+.dialog-out .video-container iframe{
+    -webkit-transition: 0.5s -webkit-transform ease-out;
+    -webkit-transform: scale(0);
+
+    transition: 0.5s transform ease-out;
+    transform: scale(0);
+}
+
+.button-video-play {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 100;
+}
+
+.button-video-play i {
+    color: #FFF;
+    text-shadow: 0 1px 0 #000;
+}
+
+.minimized .button-next {
+    opacity: 0;
+}
+
+.button-next {
+    -webkit-transition: 1s opacity ease-out;
+    transition: 1s opacity ease-out;
+    opacity: 1;
+}
+
+/* Monti Elpìs */
+.marker-elpis {
+    top: 454px;
+    left: 513px;
+}
+
+/* Agapé */
+.marker-agape {
+    top: 706px;
+    left: 805px;;
+}
+
+/* Paludi Menis */
+.marker-menis {
+    top: 480px;
+    left: 346px;
+    height: 95px;
+}
+
+/* Laghi Fobos */
+.marker-fobos {
+    top: 546px;
+    left: 471px;
+    height: 104px;
+}
+
+/* Baia Thauma */
+.marker-thauma {
+    top: 793px;
+    left: 418px;
+    height: 100px;
+}
+
+/* Karà */
+.marker-kara {
+    top: 532px;
+    left: 746px;
+}
+
+/* Arcipelago Lype */
+.marker-lype {
+    top: 591px;
+    left: 235px;
+    height: 100px;
+}
+
+/* Golfo di Aidos */
+.marker-aidos {
+    top: 699px;
+    left: 607px;
+}
+
+/* Story */
+.story-left {
+    /*
+    min-height: 20rem;
+    min-height: 70vh;
+    */
+    min-height: 20rem;
+    min-height: 40vh;
+    padding: 0;
+}
+
+.story-right {
+    padding: 0;
+    padding-left: 10px;
+}
+
+.story .button-bottom {
+    position: static;
+}
+
+.story .button-next {
+    float: right;
+}
+
+@media (max-width: 567px) {
+    .responsive-sm .story-right {
+        padding: 0;
+
+    }
+}
+
+.story-text {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+/* Bubbles */
+.bubble {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 1.5rem;
+    padding: 2vh;
+    background: #FAFAFA;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: #D91B6F solid 0.2rem;
+    min-height: 4rem;
+    min-height: 14vh;
+    /*padding-bottom: 2rem;*/
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-size: 4vh;
+    line-height: 1.5rem;
+    line-height: 4.5vh;
+    /*-webkit-transform: rotate(-0.7deg);*/
+    /*transform: rotate(-0.7deg);*/
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    color: #71143D;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.bubble:before,
+.bubble:after {
+    visibility: hidden;
+}
+
+.bubble-position.bubble-dialog-top .bubble:before,
+.bubble-position.bubble-dialog-left .bubble:before,
+.bubble-position.bubble-dialog-right .bubble:before,
+.bubble-position.bubble-dialog-top .bubble:after,
+.bubble-position.bubble-dialog-left .bubble:after,
+.bubble-position.bubble-dialog-right .bubble:after {
+    visibility: visible;
+}
+
+.bubble-dialog-bottom {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bubble-position {
+    position: absolute;
+    bottom: 0em;
+    width: calc(100% - 2rem);
+    width: calc(100% - 3vh);
+
+    transition: all 0.5s;
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+/*The bubble sliding out (LEFT)*/
+.dialog-out .bubble-position.bubble-dialog-left {
+    transform: translateX(-120%);
+}
+
+
+
+/*The bubble sliding out (RIGHT)*/
+.dialog-out .bubble-position.bubble-dialog-right {
+    transform: translateX(120%);
+}
+
+/*The bubble is out (LEFT and RIGHT)*/
+.dialog-out.ani-completed .bubble-position {
+    transition: none;
+}
+
+
+
+
+.dialog-clean .bubble {
+    opacity: 0;
+}
+
+.dialog-clean.ani-completed .bubble {
+    opacity: 1;
+}
+
+.dialog-out.ani-completed .bubble-dialog-top {
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.dialog-out .bubble-dialog-top {
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.bubble-position.bubble-top .bubble:after,
+.bubble-position.bubble-top .bubble:before {
+    display: none;
+}
+
+.bubble-position .button-next {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #D91B6F!important;
+    padding: 0 1rem;
+}
+
+.bubble-dialog-right .button-next {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #D91B6F!important;
+    padding: 0 1rem;
+}
+
+.bubble-dialog-left {
+    left: 1em;
+    left: 2vw;
+    padding-left: 5rem;
+    padding-left: 20vh;
+}
+
+.bubble-dialog-right {
+    right: 1em;
+    right: 2vw;
+    padding-right: 5rem;
+    padding-right: 20vh;
+}
+
+.bubble-position:before {
+    content: " ";
+    position: absolute;
+    background-size: cover;
+    width: 4rem;
+    width: 20vh;
+    height: 4rem;
+    height: 20vh;
+    display: block;
+    bottom: 0;
+    filter: drop-shadow(0px -10px 20px rgba(0,0,0,0.5));
+    -webkit-filter: drop-shadow(0px -10px 20px rgba(0,0,0,0.5));
+}
+
+.bubble-dialog-right:before { right:0; }
+.bubble-dialog-left:before { left: 0;  }
+/*
+.bubble-position-ragazzo:before { background: url(../img/avatar_user.png); background-size: cover;}
+.bubble-position-talete:before { background: url(../img/avatar_talete.png); background-size: cover;}
+*/
+.bubble-dialog-right:before { background: url(../img/avatar_user.png); background-size: cover;}
+.bubble-dialog-left:before { background: url(../img/avatar_talete.png); background-size: cover;}
+
+.bubble-top,
+.suggest-top,
+.bubble-dialog-top {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    top: 1.5vh;
+    left: 1.5vh;
+}
+
+
+
+.bubble:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0.8rem 0 0.8rem 0.8rem;
+    border-color: transparent #FAFAFA;
+    display: block;
+    width: 0;
+    z-index: 1;
+    bottom: 1rem;
+}
+
+.bubble:before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 1rem 0 1rem 1rem;
+    border-color: transparent #D91B6F;
+    display: block;
+    width: 0;
+    z-index: 0;
+    bottom: 0.85rem;
+}
+
+.bubble-dialog-left .bubble:after {
+    left: -0.75rem;
+    transform: rotate(180deg);
+    margin: 0.5px;
+}
+
+.bubble-dialog-left .bubble:before {
+    left: -1rem;
+    transform: rotate(180deg);
+}
+
+.bubble-dialog-right .bubble:before {
+    right: -1rem;
+    bottom: 0.75rem;
+}
+
+.bubble-dialog-right .bubble:after {
+    right: -0.75rem;
+    margin: 0.5px;
+}
+
+.bubble-dialog-top .bubble:after {
+    transform: rotate(90deg) translateY(50%);
+    bottom: auto;
+    top: calc(100% - 0.4rem);
+    left: calc(50% - 7px);
+}
+
+.bubble-dialog-top .bubble:before {
+    transform: rotate(90deg) translateY(50%);
+    bottom: auto;
+    top: calc(100% - 0.1rem - 6px);
+    left: calc(50% - 4px);
+}
+
+.bubble-bottom {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    bottom: 1.5vh;
+    left: 1.5vh;
+}
+
+.bubble-bottom .bubble:after,
+.bubble-bottom .bubble:before {
+    display: none;
+}
+
+.button-left {
+}
+
+.button-right {
+}
+
+.button-top {
+    position: absolute;
+    top: 2em;
+    left: 20em;
+}
+
+.button-bottom {
+    position: absolute;
+    bottom: 0;
+    margin: 0.2em;
+}
+
+.button-story {
+    float: right;
+}
+
+/* COMMON */
+.bg-cover {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg-abstract {
+    background: #EEE;
+    padding: 10px;
+    position: relative;
+}
+
+.bg-abstract:after {
+    display: inline-block;
+    content: " ";
+    width: 100%;
+}
+
+.viewport {
+    /*
+    width: 100vw;
+    height: 100vh
+    */
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*overflow: hidden; --> don't works in .viewport.story*/
+}
+
+.viewport.survay .scroll {
+}
+
+.has-header .viewport { 
+    height: calc(100vh - 44px);   
+}
+
+.has-subheader .viewport { 
+    height: calc(100vh - 88px);   
+}
+
+
+.choices {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 10px;
+    background: rgba(76, 76, 76, 0.86);
+    z-index: 5;
+    transform: translateY(0%);
+    transition: transform 0.5s ease-out;
+}
+
+.dialog-out .choices,
+.dialog-out.ani-completed .choices {
+    transform: translateY(100%);
+}
+
+.dialog-out.ani-completed .choices {
+    transition: none;
+}
+
+
+
+
+.choices > .col {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 0;
+}
+
+.button-dialog {
+    position: static;
+    float: right;
+    margin-top: 10px;
+}
+
+.abstract .button-next {
+    /* float: right; */
+    right: 10px;
+    margin-bottom: 20px;
+}
+
+.button.button-dark {
+    text-shadow: 0 1px 0 #B8175E;
+    border-color: #B8175E;
+    background-color: #D91B6F;
+    color: #FFF;
+    font-weight: bold;
+    border-bottom: 4px solid #B8175E;
+    border-radius: 2px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+}
+
+.button.button-dark.activated {
+    border-color: #CA206B;
+    background-color: #F34F97;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.1);
+}
+
+.choices .button-block {
+    text-shadow: 0 1px 0 #0477b6;
+    border-color: #0477b6;
+    background-color: #37A8E6;
+    color: #FFF;
+    font-weight: bold;
+    border-bottom: 4px solid #0477b6;
+    border-radius: 2px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+    line-height: 20px;
+    padding: 20px;
+}
+
+.choices .button-block.activated {
+}
+
+.choices .item-complex .item-content,
+.choices .item-radio .item-content {
+    background-color: #2294D2;
+    color: #EFEFEF;
+    text-shadow: 0 1px 0 #0477b6;
+    transition: all 0.5s;
+    white-space: normal;
+}
+
+.choices .radio-icon {
+    color: #EFEFEF;
+    text-shadow: 0 1px 0 #0477b6;
+    visibility: visible;
+    opacity: 0;
+    line-height: 1em;
+    transition: opacity 0.2s;
+}
+
+
+
+.choices .item-radio input:checked + .radio-content .item-content {
+    background-color: #37A8E6;
+    color: #FFF;
+    text-shadow: 0 1px 0 #0477b6;
+}
+
+.choices .item-radio input:checked + .radio-content .radio-icon {
+    color: #FFF;
+    opacity: 1;
+}
+
+.choices .item {
+    border-color: #0477b6;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    border-bottom: 4px solid #0477b6;
+}
+
+.bar .title,
+.bar .icon {
+    text-shadow: 0 1px 0 #CCC;
+}
+
+.bar.bar-subheader .title,
+.bar.bar-subheader .icon {
+    text-shadow: 0 1px 0 #b2175b;
+}
+
+/*STORY*/
+
+.story {
+    transition: 0.2s transform ease-out; 
+    transform: translateX(0%);
+}
+
+.story.dialog-out {
+    transform: translateX(-100%);
+}
+
+.story.dialog-out.ani-completed {
+    transition: none;
+    transform: translateX(100%);
+}
+
+.story.dialog-back {
+    transform: translateX(100%);
+}
+
+.story.dialog-back.ani-completed {
+    transition: none;
+    transform: translateX(-100%);
+}
+
+
+
+.story > .row {
+    /*margin-bottom: 48px;*/
+}
+
+.question h4, .result h4 {
+    color: #ddd !important;
+    margin-bottom: 1.5rem;
+}
+
+.result h4 {
+    position: fixed;
+    bottom: 100%;
+    background: #D91B6F;
+    padding: 20px;
+    width: calc(100% - 20px );
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    transition: 0.2s transform ease-out, 
+                0.2s opacity ease-out; 
+    
+}
+
+.result {
+   display: inline-block!important; 
+}
+
+.dialog-out .result h4,
+.result-out .result h4,
+.result.ng-hide h4 {
+    opacity: 0;
+    transform: translateY(-200px);
+}
+
+
+.bg-abstract-text {
+    /*
+    background-repeat: repeat;
+    background-image: url(/../img/bgabstract.jpg);
+    */
+}
+
+h4.abstract-text {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+    color: #333;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+h4.abstract-text:first-child:first-letter {
+    float: left;
+    color: #D91A6F;
+    font-size: 3em;
+    line-height: 0.9em;
+    padding-right: 8px;
+    font-family: Georgia;
+    font-style: normal;
+
+}
+
+
+
+
+.suggest {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 40px);
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px;
+    color: #FFF;
+    background: rgba(0,0,0,0.3);
+    opacity: 0.9;
+    box-sizing: content-box;
+    display: inline-block;
+    pointer-events: none;
+    font-size: 1.2em;
+    line-height: 1.4em;
+    border-radius: 1px;
+    min-height: auto;
+}
+
+
+
+.suggest.bubble:before,
+.suggest.bubble:after {
+    display: none;
+}
+
+.suggest-top .suggest {
+    bottom: auto;
+}
+
+
+
+.dialog-out.ani-completed .suggest-top,
+.dialog-out .suggest-top {
+    transform: translateY(-120%);
+    opacity: 0;
+}
+
+/* CREDITS */
+.credits .credits-body li {
+    list-style-type: circle;
+    margin: 10px 20px;
+    line-height: 18px;
+
+}
+
+.credits .credits-body img.full-width {
+    width: 100%;
+
+}
+
+/* DEBUG */
+
+.debug {
+    padding: 10px;
+    background: rgba(0,0,0,0.1);
+    position: absolute;
+    display: none!important;
+}
+
+.debug button {
+    margin-bottom: 8px;
+}
+
+.debug .inputfield {
+    width: 50vw;
+    /* margin: 4px; */
+}

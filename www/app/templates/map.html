@@ -1,0 +1,32 @@
+<ion-view class="map-view {{$root.animation}}">
+	<ion-nav-buttons side="left">
+      <button class="button" ng-click="goCredits()">
+        <span class="fi-icon">&#934;</span>
+      </button>
+    </ion-nav-buttons>
+
+	<ion-header-bar align-title="left" class="bar-positive bar-subheader">		
+		<h1 class="title">Mappa</h1>
+	</ion-header-bar>
+
+	<ion-content class="map-canvas" has-header="true" has-subheader="true" >
+		<ion-scroll zooming="true"
+					delegate-handle="viewport" 
+					min-zoom="0.3"
+					max-zoom="1.5"
+					scrollbar-x="false"
+					scrollbar-y="false"
+					direction="xy"
+					class="viewport"
+					style="width: 100%; height: 100%">
+			<div style="width: 1280px; height: 1280px; background: url('img/map.png')">
+				<div 	class="map-hit-area {{place.marker}}" 
+						ng-repeat="place in places track by $index" 
+						ng-class="{'locked': !checkPlaceLicense(place.id)}" 
+						ng-click="goPlace(place.id)"></div>
+			</div>
+		</ion-scroll>
+
+		<div class="suggest">Naviga e tocca la destinazione del tuo prossimo viaggio!</div>
+	</ion-content>
+</ion-view>

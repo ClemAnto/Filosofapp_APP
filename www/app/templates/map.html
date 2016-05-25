@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ion-view class="map-view {{$root.animation}}">
 	<ion-nav-buttons side="left">
       <button class="button" ng-click="goCredits()">
@@ -29,4 +30,16 @@
 
 		<div class="suggest">Naviga e tocca la destinazione del tuo prossimo viaggio!</div>
 	</ion-content>
+=======
+<ion-view view-title="Benvenuti sull'isola di Sophia">
+    <ion-content class="map-canvas">
+        <ion-scroll zooming="true" direction="xy" class="viewport">
+            <div style="width: 1280px; height: 800px; background: url('img/map_buttons.jpg')">
+                <div ng-repeat="place in places track by $index">
+                    <i class="icon ion-ios-location marker" ng-class="place.marker" ng-click="goPlace(place.id)"></i>
+                </div>
+            </div>
+        </ion-scroll>
+    </ion-content>
+>>>>>>> origin/master
 </ion-view>

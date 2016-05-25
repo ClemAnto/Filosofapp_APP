@@ -1,14 +1,22 @@
+<<<<<<< HEAD
 <div 	ng-controller="StoryCtrl" 
 		class="viewport story {{$root.animation}}" 
 		on-swipe-left="goNextPage()"
 		on-swipe-right="goPrevPage()">
+=======
+<div ng-controller="StoryCtrl" class="viewport story">
+>>>>>>> origin/master
 
     <div class="row responsive-sm padding">
         <div class="story-left col bg-cover" style="background-image: url('img/{{currentPage.image}}')"></div>
 
         <div class="story-right col">
             <div ng-class="currentPage.textClass" ng-bind-html="currentPage.text"></div>
+<<<<<<< HEAD
             <button class="button button-dark button-next" ng-class="currentPage.nextClass || DEFAULT.nextClass" ng-click="goNextPage()">{{currentPage.nextLabel || DEFAULT.nextLabel}}</button>
+=======
+            <button class="button button-dark button-next" ng-class="currentPage.nextClass" ng-click="goNextPage()">{{currentPage.nextLabel}}</button>
+>>>>>>> origin/master
         </div>
     </div>
 

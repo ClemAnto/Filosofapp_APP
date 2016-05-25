@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div ng-controller="AbstractCtrl" class="viewport abstract {{$root.animation}}" on-swipe-left="goNextScene()">
 
         
@@ -10,5 +11,25 @@
 	     
 
 	</div>
+=======
+<div ng-controller="AbstractCtrl" class="viewport abstract">
+
+        
+            
+<div class= "bg-abstract-text"> {
+
+
+            <h4 class="abstract-text" ng-class="currentScene.textClass" ng-bind-html="currentScene.text">
+            
+            </h4>
+
+            <button
+                    class="button button-dark button-next" ng-class="currentPage.nextClass"
+                    ng-click="goNextScene()">{{currentScene.nextLabel}}</button>
+       <!--  <div class="bg-cover-abstract" style="background-image: url('img/{{currentScene.background}}')"></div> -->
+
+	
+</div>
+>>>>>>> origin/master
 
 </div>

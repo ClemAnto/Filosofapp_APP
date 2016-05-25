@@ -1,4 +1,5 @@
 angular.module('filosofapp')
+<<<<<<< HEAD
     
     .filter('unsafe', function($sce) {
         return function(val) {
@@ -34,6 +35,16 @@ angular.module('filosofapp')
     })
 
     .factory('$localstorage', function($window) {
+=======
+
+    .filter('unsafe', ['$sce', function($sce) {
+        return function(val) {
+            return $sce.trustAsHtml(val);
+        };
+    }])
+
+    .factory('$localstorage', ['$window', function($window) {
+>>>>>>> origin/master
         return {
             set: function(key, value)
             {
@@ -52,9 +63,15 @@ angular.module('filosofapp')
                 return JSON.parse($window.localStorage[key] || null); // JSON.parse(null) = null
             }
         }
+<<<<<<< HEAD
     })
 
     .factory('Config', function(SETTINGS, $rootScope, $localstorage) {
+=======
+    }])
+
+    .factory('Config', ['SETTINGS', '$rootScope', '$localstorage', function(SETTINGS, $rootScope, $localstorage) {
+>>>>>>> origin/master
 
         var defaultUserConfig = function() {
             return {
@@ -75,6 +92,7 @@ angular.module('filosofapp')
         };
 
         return {
+<<<<<<< HEAD
 
             getLicense: function() {
                 return 'demo-version'; //full-version
@@ -89,6 +107,11 @@ angular.module('filosofapp')
                 return deviceConfig.hasOwnProperty(property) ? deviceConfig[property] : '';
             },
 
+=======
+            getDeviceConfig: function(property) {
+                return deviceConfig.hasOwnProperty(property) ? deviceConfig[property] : '';
+            },
+>>>>>>> origin/master
             setDeviceConfig: function(property, value) {
                 if ((typeof(value) !== 'undefined') && (value !== null)) {
                     if (deviceConfig.hasOwnProperty(property)) {
@@ -98,7 +121,10 @@ angular.module('filosofapp')
                 }
                 return false;
             },
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
             checkNetworkStatus: function(fromNetworkError) {
                 var currentNetworkOnline = deviceConfig.networkOnline;
                 if (deviceConfig.onDevice) {
@@ -115,11 +141,17 @@ angular.module('filosofapp')
                     $rootScope.$broadcast('network.alert');
                 }
             },
+<<<<<<< HEAD
 
             getUserConfig: function(property) {
                 return userConfig.hasOwnProperty(property) ? userConfig[property] : '';
             },
 
+=======
+            getUserConfig: function(property) {
+                return userConfig.hasOwnProperty(property) ? userConfig[property] : '';
+            },
+>>>>>>> origin/master
             setUserConfig: function(property, value, save) {
                 save = save || false;
                 if ((typeof(value) !== 'undefined') && (value !== null)) { // is set
@@ -135,19 +167,32 @@ angular.module('filosofapp')
                 }
                 return false;
             },
+<<<<<<< HEAD
 
             unsaveUserConfig: function() {
                 $localstorage.setObject('userConfig', defaultUserConfig());
             },
 
+=======
+            unsaveUserConfig: function() {
+                $localstorage.setObject('userConfig', defaultUserConfig());
+            },
+>>>>>>> origin/master
             resetUserConfig: function() {
                 userConfig = defaultUserConfig();
                 $localstorage.setObject('userConfig', userConfig);
             },
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
             isValidLanguage: function(language) {
                 return (SETTINGS.languages.indexOf(language) >= 0);
             }
         }
 
+<<<<<<< HEAD
     });
+=======
+    }]);
+>>>>>>> origin/master

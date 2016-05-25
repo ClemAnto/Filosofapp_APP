@@ -1,7 +1,11 @@
 {
   "name": "filosofapp",
   "version": "1.1.1",
+<<<<<<< HEAD
   "description": "FilosofApp: impara la FILOSOFIA dialogando con i piu' grandi pensatori del passato",
+=======
+  "description": "FilosofApp: An Ionic project",
+>>>>>>> origin/master
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
@@ -22,7 +26,12 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard"
   ],
+<<<<<<< HEAD
   "cordovaPlatforms": [
     "android"
   ]
 }
+=======
+  "cordovaPlatforms": []
+}
+>>>>>>> origin/master

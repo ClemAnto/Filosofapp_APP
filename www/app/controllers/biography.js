@@ -1,5 +1,6 @@
 angular.module('filosofapp')
 
+<<<<<<< HEAD
     .controller('BiographyCtrl', function($log, $rootScope, $scope, $state, Animation, SETTINGS) {
         
         var pages = $scope.currentScene.pages;
@@ -11,11 +12,23 @@ angular.module('filosofapp')
 
             currentPageIdx++;
             if (currentPageIdx >= pages.length) {
+=======
+    .controller('BiographyCtrl', ['$log', '$rootScope', '$scope', '$state', function($log, $rootScope, $scope, $state) {
+
+        $scope.pages = $scope.currentScene.pages;
+        $scope.currentPageIdx = 0;
+        $scope.currentPage = $scope.pages[$scope.currentPageIdx];
+
+        $scope.goNextPage = function() {
+            $scope.currentPageIdx++;
+            if ($scope.currentPageIdx >= $scope.pages.length) {
+>>>>>>> origin/master
                 if ($scope.currentScene.nextScene.length > 0) {
                     $state.go('place', { placeId: $scope.currentPlace.id, sceneId: $scope.currentScene.nextScene });
                 } else {
                     $state.go('map');
                 }
+<<<<<<< HEAD
                 
             } else {
                 
@@ -68,3 +81,11 @@ angular.module('filosofapp')
         $scope.checkPageLength($scope.currentPage);
 
     });
+=======
+            } else {
+                $scope.currentPage = $scope.pages[$scope.currentPageIdx];
+            }
+        };
+
+    }]);
+>>>>>>> origin/master

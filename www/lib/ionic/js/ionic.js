@@ -1,8 +1,15 @@
 /*!
+<<<<<<< HEAD
  * Copyright 2015 Drifty Co.
  * http://drifty.com/
  *
  * Ionic, v1.2.4-nightly-1917
+=======
+ * Copyright 2014 Drifty Co.
+ * http://drifty.com/
+ *
+ * Ionic, v1.1.1
+>>>>>>> origin/master
  * A powerful HTML5 mobile app framework.
  * http://ionicframework.com/
  *
@@ -18,7 +25,11 @@
 // build processes may have already created an ionic obj
 window.ionic = window.ionic || {};
 window.ionic.views = {};
+<<<<<<< HEAD
 window.ionic.version = '1.2.4-nightly-1917';
+=======
+window.ionic.version = '1.1.1';
+>>>>>>> origin/master
 
 (function (ionic) {
 
@@ -237,6 +248,7 @@ window.ionic.version = '1.2.4-nightly-1917';
       };
     },
 
+<<<<<<< HEAD
     getOffsetTop: function(el) {
       var curtop = 0;
       if (el.offsetParent) {
@@ -248,6 +260,8 @@ window.ionic.version = '1.2.4-nightly-1917';
       }
     },
 
+=======
+>>>>>>> origin/master
     /**
      * @ngdoc method
      * @name ionic.DomUtil#ready
@@ -1632,7 +1646,11 @@ window.ionic.version = '1.2.4-nightly-1917';
     index: 10,
     defaults: {
       hold_timeout: 500,
+<<<<<<< HEAD
       hold_threshold: 9
+=======
+      hold_threshold: 1
+>>>>>>> origin/master
     },
     timer: null,
     handler: function holdGesture(ev, inst) {
@@ -2040,8 +2058,11 @@ window.ionic.version = '1.2.4-nightly-1917';
   var IOS = 'ios';
   var ANDROID = 'android';
   var WINDOWS_PHONE = 'windowsphone';
+<<<<<<< HEAD
   var EDGE = 'edge';
   var CROSSWALK = 'crosswalk';
+=======
+>>>>>>> origin/master
   var requestAnimationFrame = ionic.requestAnimationFrame;
 
   /**
@@ -2261,6 +2282,7 @@ window.ionic.version = '1.2.4-nightly-1917';
     isWindowsPhone: function() {
       return self.is(WINDOWS_PHONE);
     },
+<<<<<<< HEAD
     /**
      * @ngdoc method
      * @name ionic.Platform#isEdge
@@ -2273,6 +2295,8 @@ window.ionic.version = '1.2.4-nightly-1917';
     isCrosswalk: function() {
       return self.is(CROSSWALK);
     },
+=======
+>>>>>>> origin/master
 
     /**
      * @ngdoc method
@@ -2293,14 +2317,22 @@ window.ionic.version = '1.2.4-nightly-1917';
         platformName = n.toLowerCase();
       } else if (getParameterByName('ionicplatform')) {
         platformName = getParameterByName('ionicplatform');
+<<<<<<< HEAD
       } else if (self.ua.indexOf('Edge') > -1) {
         platformName = EDGE;
       } else if (self.ua.indexOf('Windows Phone') > -1) {
         platformName = WINDOWS_PHONE;
+=======
+>>>>>>> origin/master
       } else if (self.ua.indexOf('Android') > 0) {
         platformName = ANDROID;
       } else if (/iPhone|iPad|iPod/.test(self.ua)) {
         platformName = IOS;
+<<<<<<< HEAD
+=======
+      } else if (self.ua.indexOf('Windows Phone') > -1) {
+        platformName = WINDOWS_PHONE;
+>>>>>>> origin/master
       } else {
         platformName = self.navigator.platform && navigator.platform.toLowerCase().split(' ')[0] || '';
       }
@@ -2439,6 +2471,7 @@ window.ionic.version = '1.2.4-nightly-1917';
   var platformName = null, // just the name, like iOS or Android
   platformVersion = null, // a float of the major and minor, like 7.1
   readyCallbacks = [],
+<<<<<<< HEAD
   windowLoadListenderAttached,
   platformReadyTimer = 2000; // How long to wait for platform ready before emitting a warning
 
@@ -2452,6 +2485,9 @@ window.ionic.version = '1.2.4-nightly-1917';
       }
     }, platformReadyTimer);
   }
+=======
+  windowLoadListenderAttached;
+>>>>>>> origin/master
 
   // setup listeners to know when the device is ready to go
   function onWindowLoad() {
@@ -2491,17 +2527,24 @@ window.ionic.version = '1.2.4-nightly-1917';
     });
   }
 
+<<<<<<< HEAD
 })(window, document, ionic);
+=======
+})(this, document, ionic);
+>>>>>>> origin/master
 
 (function(document, ionic) {
   'use strict';
 
   // Ionic CSS polyfills
   ionic.CSS = {};
+<<<<<<< HEAD
   ionic.CSS.TRANSITION = [];
   ionic.CSS.TRANSFORM = [];
 
   ionic.EVENTS = {};
+=======
+>>>>>>> origin/master
 
   (function() {
 
@@ -2525,9 +2568,12 @@ window.ionic.version = '1.2.4-nightly-1917';
       }
     }
 
+<<<<<<< HEAD
     // Fallback in case the keys don't exist at all
     ionic.CSS.TRANSITION = ionic.CSS.TRANSITION || 'transition';
 
+=======
+>>>>>>> origin/master
     // The only prefix we care about is webkit for transitions.
     var isWebkit = ionic.CSS.TRANSITION.indexOf('webkit') > -1;
 
@@ -2538,6 +2584,7 @@ window.ionic.version = '1.2.4-nightly-1917';
     ionic.CSS.TRANSITIONEND = (isWebkit ? 'webkitTransitionEnd ' : '') + 'transitionend';
   })();
 
+<<<<<<< HEAD
   (function() {
       var touchStartEvent = 'touchstart';
       var touchMoveEvent = 'touchmove';
@@ -2562,6 +2609,8 @@ window.ionic.version = '1.2.4-nightly-1917';
       ionic.EVENTS.touchcancel = touchCancelEvent;
   })();
 
+=======
+>>>>>>> origin/master
   // classList polyfill for them older Androids
   // https://gist.github.com/devongovett/1381839
   if (!("classList" in document.documentElement) && Object.defineProperty && typeof HTMLElement !== 'undefined') {
@@ -2730,7 +2779,11 @@ ionic.tap = {
     if (window.navigator.pointerEnabled) {
       tapEventListener('pointerdown');
       tapEventListener('pointerup');
+<<<<<<< HEAD
       tapEventListener('pointercancel');
+=======
+      tapEventListener('pointcancel');
+>>>>>>> origin/master
       tapTouchMoveListener = 'pointermove';
 
     } else if (window.navigator.msPointerEnabled) {
@@ -2780,11 +2833,14 @@ ionic.tap = {
             (ele.tagName == 'INPUT' && (/^(date|time|datetime-local|month|week)$/i).test(ele.type));
   },
 
+<<<<<<< HEAD
   isVideo: function(ele) {
     return !!ele &&
             (ele.tagName == 'VIDEO');
   },
 
+=======
+>>>>>>> origin/master
   isKeyboardElement: function(ele) {
     if ( !ionic.Platform.isIOS() || ionic.Platform.isIPad() ) {
       return ionic.tap.isTextInput(ele) && !ionic.tap.isDateInput(ele);
@@ -2851,9 +2907,12 @@ ionic.tap = {
   },
 
   requiresNativeClick: function(ele) {
+<<<<<<< HEAD
     if (ionic.Platform.isWindowsPhone() && (ele.tagName == 'A' || ele.tagName == 'BUTTON' || ele.hasAttribute('ng-click') || (ele.tagName == 'INPUT' && (ele.type == 'button' || ele.type == 'submit')))) {
       return true; //Windows Phone edge case, prevent ng-click (and similar) events from firing twice on this platform
     }
+=======
+>>>>>>> origin/master
     if (!ele || ele.disabled || (/^(file|range)$/i).test(ele.type) || (/^(object|video)$/i).test(ele.tagName) || ionic.tap.isLabelContainingFileInput(ele)) {
       return true;
     }
@@ -2872,7 +2931,11 @@ ionic.tap = {
     if (ele && ele.nodeType === 1) {
       var element = ele;
       while (element) {
+<<<<<<< HEAD
         if ((element.dataset ? element.dataset.tapDisabled : element.getAttribute && element.getAttribute('data-tap-disabled')) == 'true') {
+=======
+        if ((element.dataset ? element.dataset.tapDisabled : element.getAttribute('data-tap-disabled')) == 'true') {
+>>>>>>> origin/master
           return true;
         }
         element = element.parentElement;
@@ -2968,17 +3031,27 @@ function tapMouseDown(e) {
   if (e.isIonicTap || tapIgnoreEvent(e)) return null;
 
   if (tapEnabledTouchEvents) {
+<<<<<<< HEAD
     //console.log('mousedown', 'stop event');
     e.stopPropagation();
 
     if (!ionic.Platform.isEdge() && (!ionic.tap.isTextInput(e.target) || tapLastTouchTarget !== e.target) &&
       !isSelectOrOption(e.target.tagName) && !ionic.tap.isVideo(e.target)) {
+=======
+    void 0;
+    e.stopPropagation();
+
+    if ((!ionic.tap.isTextInput(e.target) || tapLastTouchTarget !== e.target) && !(/^(select|option)$/i).test(e.target.tagName)) {
+>>>>>>> origin/master
       // If you preventDefault on a text input then you cannot move its text caret/cursor.
       // Allow through only the text input default. However, without preventDefault on an
       // input the 300ms delay can change focus on inputs after the keyboard shows up.
       // The focusin event handles the chance of focus changing after the keyboard shows.
+<<<<<<< HEAD
       // Windows Phone - if you preventDefault on a video element then you cannot operate
       // its native controls.
+=======
+>>>>>>> origin/master
       e.preventDefault();
     }
 
@@ -3000,7 +3073,11 @@ function tapMouseUp(e) {
     return false;
   }
 
+<<<<<<< HEAD
   if (tapIgnoreEvent(e) || isSelectOrOption(e.target.tagName)) return false;
+=======
+  if (tapIgnoreEvent(e) || (/^(select|option)$/i).test(e.target.tagName)) return false;
+>>>>>>> origin/master
 
   if (!tapHasPointerMoved(e)) {
     tapClick(e);
@@ -3042,7 +3119,10 @@ function tapTouchStart(e) {
     var textInput = tapTargetElement(tapContainingElement(e.target));
     if (textInput !== tapActiveEle) {
       // don't preventDefault on an already focused input or else iOS's text caret isn't usable
+<<<<<<< HEAD
       //console.log('Would prevent default here');
+=======
+>>>>>>> origin/master
       e.preventDefault();
     }
   }
@@ -3056,7 +3136,11 @@ function tapTouchEnd(e) {
   if (!tapHasPointerMoved(e)) {
     tapClick(e);
 
+<<<<<<< HEAD
     if (isSelectOrOption(e.target.tagName)) {
+=======
+    if ((/^(select|option)$/i).test(e.target.tagName)) {
+>>>>>>> origin/master
       e.preventDefault();
     }
   }
@@ -3092,10 +3176,13 @@ function tapIgnoreEvent(e) {
   if (e.isTapHandled) return true;
   e.isTapHandled = true;
 
+<<<<<<< HEAD
   if(ionic.tap.isElementTapDisabled(e.target)) {
     return true;
   }
 
+=======
+>>>>>>> origin/master
   if (ionic.scroll.isScrolling && ionic.tap.containsOrIsTextInput(e.target)) {
     e.preventDefault();
     return true;
@@ -3117,7 +3204,11 @@ function tapHandleFocus(ele) {
     // already is the active element and has focus
     triggerFocusIn = true;
 
+<<<<<<< HEAD
   } else if ((/^(input|textarea|ion-label)$/i).test(ele.tagName) || ele.isContentEditable) {
+=======
+  } else if ((/^(input|textarea)$/i).test(ele.tagName) || ele.isContentEditable) {
+>>>>>>> origin/master
     triggerFocusIn = true;
     ele.focus && ele.focus();
     ele.value = ele.value;
@@ -3140,7 +3231,11 @@ function tapHandleFocus(ele) {
 function tapFocusOutActive() {
   var ele = tapActiveElement();
   if (ele && ((/^(input|textarea|select)$/i).test(ele.tagName) || ele.isContentEditable)) {
+<<<<<<< HEAD
     //console.log('tapFocusOutActive', ele.tagName);
+=======
+    void 0;
+>>>>>>> origin/master
     ele.blur();
   }
   tapActiveElement(null);
@@ -3161,7 +3256,11 @@ function tapFocusIn(e) {
     // 2) There is an active element which is a text input
     // 3) A text input was just set to be focused on by a touch event
     // 4) A new focus has been set, however the target isn't the one the touch event wanted
+<<<<<<< HEAD
     //console.log('focusin', 'tapTouchFocusedInput');
+=======
+    void 0;
+>>>>>>> origin/master
     tapTouchFocusedInput.focus();
     tapTouchFocusedInput = null;
   }
@@ -3219,10 +3318,13 @@ function tapTargetElement(ele) {
   return ele;
 }
 
+<<<<<<< HEAD
 function isSelectOrOption(tagName){
   return (/^(select|option)$/i).test(tagName);
 }
 
+=======
+>>>>>>> origin/master
 ionic.DomUtil.ready(function() {
   var ng = typeof angular !== 'undefined' ? angular : null;
   //do nothing for e2e tests
@@ -3644,12 +3746,15 @@ var keyboardLandscapeViewportHeight = 0;
 var keyboardActiveElement;
 
 /**
+<<<<<<< HEAD
  * The previously focused input used to reset keyboard after focusing on a
  * new non-keyboard element
  */
 var lastKeyboardActiveElement;
 
 /**
+=======
+>>>>>>> origin/master
  * The scroll view containing the currently focused input.
  */
 var scrollView;
@@ -3865,9 +3970,12 @@ function keyboardFocusIn(e) {
       e.target.readOnly ||
       !ionic.tap.isKeyboardElement(e.target) ||
       !(scrollView = ionic.DomUtil.getParentWithClass(e.target, SCROLL_CONTAINER_CSS))) {
+<<<<<<< HEAD
     if (keyboardActiveElement) {
         lastKeyboardActiveElement = keyboardActiveElement;
     }
+=======
+>>>>>>> origin/master
     keyboardActiveElement = null;
     return;
   }
@@ -4103,9 +4211,15 @@ function keyboardHide() {
   ionic.keyboard.isOpen = false;
   ionic.keyboard.isClosing = false;
 
+<<<<<<< HEAD
   if (keyboardActiveElement || lastKeyboardActiveElement) {
     ionic.trigger('resetScrollView', {
       target: keyboardActiveElement || lastKeyboardActiveElement
+=======
+  if (keyboardActiveElement) {
+    ionic.trigger('resetScrollView', {
+      target: keyboardActiveElement
+>>>>>>> origin/master
     }, true);
   }
 
@@ -4129,7 +4243,10 @@ function keyboardHide() {
   }
 
   keyboardActiveElement = null;
+<<<<<<< HEAD
   lastKeyboardActiveElement = null;
+=======
+>>>>>>> origin/master
 }
 
 /**
@@ -4717,7 +4834,11 @@ var zyngaCore = { effect: {} };
       return id;
     }
   };
+<<<<<<< HEAD
 })(window);
+=======
+})(this);
+>>>>>>> origin/master
 
 /*
  * Scroller
@@ -4898,9 +5019,12 @@ ionic.views.Scroll = ionic.views.View.inherit({
       return self.options.freeze;
     };
 
+<<<<<<< HEAD
     // We can just use the standard freeze pop in our mouth
     self.freezeShut = self.freeze;
 
+=======
+>>>>>>> origin/master
     self.setScrollStart = function() {
       ionic.scroll.isScrolling = Math.abs(ionic.scroll.lastTop - self.__scrollTop) > 1;
       clearTimeout(self.scrollTimer);
@@ -5375,7 +5499,10 @@ ionic.views.Scroll = ionic.views.View.inherit({
       document.addEventListener("touchmove", self.touchMove, false);
       document.addEventListener("touchend", self.touchEnd, false);
       document.addEventListener("touchcancel", self.touchEnd, false);
+<<<<<<< HEAD
       document.addEventListener("wheel", self.mouseWheel, false);
+=======
+>>>>>>> origin/master
 
     } else if (window.navigator.pointerEnabled) {
       // Pointer Events
@@ -6974,7 +7101,11 @@ ionic.scroll = {
 
 (function(ionic) {
   var NOOP = function() {};
+<<<<<<< HEAD
   var deprecated = function(name) {
+=======
+  var depreciated = function(name) {
+>>>>>>> origin/master
     void 0;
   };
   ionic.views.ScrollNative = ionic.views.View.inherit({
@@ -6983,8 +7114,11 @@ ionic.scroll = {
       var self = this;
       self.__container = self.el = options.el;
       self.__content = options.el.firstElementChild;
+<<<<<<< HEAD
       // Whether scrolling is frozen or not
       self.__frozen = false;
+=======
+>>>>>>> origin/master
       self.isNative = true;
 
       self.__scrollTop = self.el.scrollTop;
@@ -6994,6 +7128,7 @@ ionic.scroll = {
       self.__maxScrollTop = Math.max((self.__contentHeight) - self.__clientHeight, 0);
       self.__maxScrollLeft = Math.max((self.__contentWidth) - self.__clientWidth, 0);
 
+<<<<<<< HEAD
       if(options.startY >= 0 || options.startX >= 0) {
         ionic.requestAnimationFrame(function() {
           self.el.scrollTop = options.startY || 0;
@@ -7004,6 +7139,8 @@ ionic.scroll = {
         });
       }
 
+=======
+>>>>>>> origin/master
       self.options = {
 
         freeze: false,
@@ -7036,6 +7173,7 @@ ionic.scroll = {
         }, 80);
       };
 
+<<<<<<< HEAD
       self.freeze = function(shouldFreeze) {
         self.__frozen = shouldFreeze;
       };
@@ -7043,15 +7181,25 @@ ionic.scroll = {
       self.freezeShut = function(shouldFreezeShut) {
         self.__frozenShut = shouldFreezeShut;
       };
+=======
+      self.freeze = NOOP;
+>>>>>>> origin/master
 
       self.__initEventHandlers();
     },
 
     /**  Methods not used in native scrolling */
+<<<<<<< HEAD
     __callback: function() { deprecated('__callback'); },
     zoomTo: function() { deprecated('zoomTo'); },
     zoomBy: function() { deprecated('zoomBy'); },
     activatePullToRefresh: function() { deprecated('activatePullToRefresh'); },
+=======
+    __callback: function() { depreciated('__callback'); },
+    zoomTo: function() { depreciated('zoomTo'); },
+    zoomBy: function() { depreciated('zoomBy'); },
+    activatePullToRefresh: function() { depreciated('activatePullToRefresh'); },
+>>>>>>> origin/master
 
     /**
      * Returns the scroll position and zooming values
@@ -7191,6 +7339,7 @@ ionic.scroll = {
         self.resize();
         return;
       }
+<<<<<<< HEAD
 
       var oldOverflowX = self.el.style.overflowX;
       var oldOverflowY = self.el.style.overflowY;
@@ -7204,6 +7353,8 @@ ionic.scroll = {
       self.el.style.overflowY = 'hidden';
       self.el.style.overflowX = 'hidden';
 
+=======
+>>>>>>> origin/master
       animateScroll(top, left);
 
       function animateScroll(Y, X) {
@@ -7215,8 +7366,11 @@ ionic.scroll = {
           fromX = self.el.scrollLeft;
 
         if (fromY === Y && fromX === X) {
+<<<<<<< HEAD
           self.el.style.overflowX = oldOverflowX;
           self.el.style.overflowY = oldOverflowY;
+=======
+>>>>>>> origin/master
           self.resize();
           return; /* Prevent scrolling to the Y point if already there */
         }
@@ -7247,8 +7401,11 @@ ionic.scroll = {
           } else {
             // done
             ionic.tap.removeClonedInputs(self.__container, self);
+<<<<<<< HEAD
             self.el.style.overflowX = oldOverflowX;
             self.el.style.overflowY = oldOverflowY;
+=======
+>>>>>>> origin/master
             self.resize();
           }
         }
@@ -7306,14 +7463,18 @@ ionic.scroll = {
       // save height when scroll view is shrunk so we don't need to reflow
       var scrollViewOffsetHeight;
 
+<<<<<<< HEAD
       var lastKeyboardHeight;
 
+=======
+>>>>>>> origin/master
       /**
        * Shrink the scroll view when the keyboard is up if necessary and if the
        * focused input is below the bottom of the shrunk scroll view, scroll it
        * into view.
        */
       self.scrollChildIntoView = function(e) {
+<<<<<<< HEAD
         var rect = container.getBoundingClientRect();
         if(!self.__originalContainerHeight) {
           self.__originalContainerHeight = rect.height;
@@ -7329,6 +7490,17 @@ ionic.scroll = {
 
         var isModal = container.parentNode.classList.contains('modal');
         var isPopover = container.parentNode.classList.contains('popover');
+=======
+        //console.log("scrollChildIntoView at: " + Date.now());
+
+        // D
+        var scrollBottomOffsetToTop = container.getBoundingClientRect().bottom;
+        // D - A
+        scrollViewOffsetHeight = container.offsetHeight;
+        var alreadyShrunk = self.isShrunkForKeyboard;
+
+        var isModal = container.parentNode.classList.contains('modal');
+>>>>>>> origin/master
         // 680px is when the media query for 60% modal width kicks in
         var isInsetModal = isModal && window.innerWidth >= 680;
 
@@ -7344,6 +7516,7 @@ ionic.scroll = {
         *  All commented calculations relative to the top of the viewport (ie E
         *  is the viewport height, not 0)
         */
+<<<<<<< HEAD
 
 
         var changedKeyboardHeight = lastKeyboardHeight && (lastKeyboardHeight !== e.detail.keyboardHeight);
@@ -7379,6 +7552,26 @@ ionic.scroll = {
               }
               */
               container.classList.add('keyboard-up');
+=======
+        if (!alreadyShrunk) {
+          // shrink scrollview so we can actually scroll if the input is hidden
+          // if it isn't shrink so we can scroll to inputs under the keyboard
+          // inset modals won't shrink on Android on their own when the keyboard appears
+          if ( ionic.Platform.isIOS() || ionic.Platform.isFullScreen || isInsetModal ) {
+            // if there are things below the scroll view account for them and
+            // subtract them from the keyboard height when resizing
+            // E - D                         E                         D
+            var scrollBottomOffsetToBottom = e.detail.viewportHeight - scrollBottomOffsetToTop;
+
+            // 0 or D - B if D > B           E - B                     E - D
+            var keyboardOffset = Math.max(0, e.detail.keyboardHeight - scrollBottomOffsetToBottom);
+
+            ionic.requestAnimationFrame(function(){
+              // D - A or B - A if D > B       D - A             max(0, D - B)
+              scrollViewOffsetHeight = scrollViewOffsetHeight - keyboardOffset;
+              container.style.height = scrollViewOffsetHeight + "px";
+
+>>>>>>> origin/master
               //update scroll view
               self.resize();
             });
@@ -7387,8 +7580,11 @@ ionic.scroll = {
           self.isShrunkForKeyboard = true;
         }
 
+<<<<<<< HEAD
         lastKeyboardHeight = e.detail.keyboardHeight;
 
+=======
+>>>>>>> origin/master
         /*
          *  _______
          * |---A---| <- top of scroll view
@@ -7405,6 +7601,7 @@ ionic.scroll = {
         if (e.detail.isElementUnderKeyboard) {
 
           ionic.requestAnimationFrame(function(){
+<<<<<<< HEAD
             var pos = ionic.DomUtil.getOffsetTop(e.detail.target);
             setTimeout(function() {
               if (ionic.Platform.isIOS()) {
@@ -7420,27 +7617,44 @@ ionic.scroll = {
             if (self.isShrunkForKeyboard && !alreadyShrunk) {
               scrollBottomOffsetToTop = container.getBoundingClientRect().bottom;
               console.log('Scroll bottom', scrollBottomOffsetToTop);
+=======
+            // update D if we shrunk
+            if (self.isShrunkForKeyboard && !alreadyShrunk) {
+              scrollBottomOffsetToTop = container.getBoundingClientRect().bottom;
+>>>>>>> origin/master
             }
 
             // middle of the scrollview, this is where we want to scroll to
             // (D - A) / 2
             var scrollMidpointOffset = scrollViewOffsetHeight * 0.5;
+<<<<<<< HEAD
             console.log('Midpoint', scrollMidpointOffset);
+=======
+>>>>>>> origin/master
             //console.log("container.offsetHeight: " + scrollViewOffsetHeight);
 
             // middle of the input we want to scroll into view
             // C
             var inputMidpoint = ((e.detail.elementBottom + e.detail.elementTop) / 2);
+<<<<<<< HEAD
             console.log('Input midpoint');
+=======
+>>>>>>> origin/master
 
             // distance from middle of input to the bottom of the scroll view
             // C - D                                C               D
             var inputMidpointOffsetToScrollBottom = inputMidpoint - scrollBottomOffsetToTop;
+<<<<<<< HEAD
             console.log('Input midpoint offset', inputMidpointOffsetToScrollBottom);
 
             //C - D + (D - A)/2          C - D                     (D - A)/ 2
             var scrollTop = inputMidpointOffsetToScrollBottom + scrollMidpointOffset;
             console.log('Scroll top', scrollTop);
+=======
+
+            //C - D + (D - A)/2          C - D                     (D - A)/ 2
+            var scrollTop = inputMidpointOffsetToScrollBottom + scrollMidpointOffset;
+>>>>>>> origin/master
 
             if ( scrollTop > 0) {
               if (ionic.Platform.isIOS()) {
@@ -7455,7 +7669,10 @@ ionic.scroll = {
                 self.onScroll();
               }
             }
+<<<<<<< HEAD
             */
+=======
+>>>>>>> origin/master
           });
         }
 
@@ -7469,6 +7686,7 @@ ionic.scroll = {
         if (self.isShrunkForKeyboard) {
           self.isShrunkForKeyboard = false;
           container.style.height = "";
+<<<<<<< HEAD
 
           /*
           if (ionic.Platform.isIOS()) {
@@ -7488,10 +7706,13 @@ ionic.scroll = {
             });
           }
 
+=======
+>>>>>>> origin/master
         }
         self.resize();
       };
 
+<<<<<<< HEAD
       self.handleTouchMove = function(e) {
         if(self.__frozenShut) {
           e.preventDefault();
@@ -7500,15 +7721,20 @@ ionic.scroll = {
         }
       };
 
+=======
+>>>>>>> origin/master
       container.addEventListener('scroll', self.onScroll);
 
       //Broadcasted when keyboard is shown on some platforms.
       //See js/utils/keyboard.js
       container.addEventListener('scrollChildIntoView', self.scrollChildIntoView);
 
+<<<<<<< HEAD
       container.addEventListener(ionic.EVENTS.touchstart, self.handleTouchMove);
       container.addEventListener(ionic.EVENTS.touchmove, self.handleTouchMove);
 
+=======
+>>>>>>> origin/master
       // Listen on document because container may not have had the last
       // keyboardActiveElement, for example after closing a modal with a focused
       // input and returning to a previously resized scroll view in an ion-content.
@@ -7527,9 +7753,12 @@ ionic.scroll = {
       container.removeEventListener('scrollChildIntoView', self.scrollChildIntoView);
       container.removeEventListener('resetScrollView', self.resetScrollView);
 
+<<<<<<< HEAD
       container.removeEventListener(ionic.EVENTS.touchstart, self.handleTouchMove);
       container.removeEventListener(ionic.EVENTS.touchmove, self.handleTouchMove);
 
+=======
+>>>>>>> origin/master
       ionic.tap.removeClonedInputs(container, self);
 
       delete self.__container;
@@ -7546,6 +7775,10 @@ ionic.scroll = {
 
 })(ionic);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 (function(ionic) {
 'use strict';
 
@@ -8286,6 +8519,7 @@ ionic.views.Slider = ionic.views.View.inherit({
   initialize: function (options) {
     var slider = this;
 
+<<<<<<< HEAD
     var touchStartEvent, touchMoveEvent, touchEndEvent;
     if (window.navigator.pointerEnabled) {
       touchStartEvent = 'pointerdown';
@@ -8305,6 +8539,8 @@ ionic.views.Slider = ionic.views.View.inherit({
     var mouseMoveEvent = 'mousemove';
     var mouseEndEvent = 'mouseup';
 
+=======
+>>>>>>> origin/master
     // utilities
     var noop = function() {}; // simple no operation function
     var offloadFn = function(fn) { setTimeout(fn || noop, 0); }; // offload a functions execution
@@ -8312,6 +8548,10 @@ ionic.views.Slider = ionic.views.View.inherit({
     // check browser capabilities
     var browser = {
       addEventListener: !!window.addEventListener,
+<<<<<<< HEAD
+=======
+      touch: ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch,
+>>>>>>> origin/master
       transitions: (function(temp) {
         var props = ['transitionProperty', 'WebkitTransition', 'MozTransition', 'OTransition', 'msTransition'];
         for ( var i in props ) if (temp.style[ props[i] ] !== undefined) return true;
@@ -8415,11 +8655,14 @@ ionic.views.Slider = ionic.views.View.inherit({
       // do nothing if already on requested slide
       if (index == to) return;
 
+<<<<<<< HEAD
       if (!slides) {
         index = to;
         return;
       }
 
+=======
+>>>>>>> origin/master
       if (browser.transitions) {
 
         var direction = Math.abs(index - to) / (index - to); // 1: backward, -1: forward
@@ -8547,7 +8790,11 @@ ionic.views.Slider = ionic.views.View.inherit({
     var events = {
 
       handleEvent: function(event) {
+<<<<<<< HEAD
         if(!event.touches && event.pageX && event.pageY) {
+=======
+        if(event.type == 'mousedown' || event.type == 'mouseup' || event.type == 'mousemove') {
+>>>>>>> origin/master
           event.touches = [{
             pageX: event.pageX,
             pageY: event.pageY
@@ -8555,12 +8802,21 @@ ionic.views.Slider = ionic.views.View.inherit({
         }
 
         switch (event.type) {
+<<<<<<< HEAD
           case touchStartEvent: this.start(event); break;
           case mouseStartEvent: this.start(event); break;
           case touchMoveEvent: this.touchmove(event); break;
           case mouseMoveEvent: this.touchmove(event); break;
           case touchEndEvent: offloadFn(this.end(event)); break;
           case mouseEndEvent: offloadFn(this.end(event)); break;
+=======
+          case 'mousedown': this.start(event); break;
+          case 'touchstart': this.start(event); break;
+          case 'touchmove': this.touchmove(event); break;
+          case 'mousemove': this.touchmove(event); break;
+          case 'touchend': offloadFn(this.end(event)); break;
+          case 'mouseup': offloadFn(this.end(event)); break;
+>>>>>>> origin/master
           case 'webkitTransitionEnd':
           case 'msTransitionEnd':
           case 'oTransitionEnd':
@@ -8574,11 +8830,14 @@ ionic.views.Slider = ionic.views.View.inherit({
       },
       start: function(event) {
 
+<<<<<<< HEAD
         // prevent to start if there is no valid event
         if (!event.touches) {
           return;
         }
 
+=======
+>>>>>>> origin/master
         var touches = event.touches[0];
 
         // measure start values
@@ -8600,6 +8859,7 @@ ionic.views.Slider = ionic.views.View.inherit({
         delta = {};
 
         // attach touchmove and touchend listeners
+<<<<<<< HEAD
         element.addEventListener(touchMoveEvent, this, false);
         element.addEventListener(mouseMoveEvent, this, false);
 
@@ -8616,6 +8876,22 @@ ionic.views.Slider = ionic.views.View.inherit({
         // ensure sliding is enabled
         if (!event.touches ||
             event.touches.length > 1 ||
+=======
+        if(browser.touch) {
+          element.addEventListener('touchmove', this, false);
+          element.addEventListener('touchend', this, false);
+        } else {
+          element.addEventListener('mousemove', this, false);
+          element.addEventListener('mouseup', this, false);
+          document.addEventListener('mouseup', this, false);
+        }
+      },
+      touchmove: function(event) {
+
+        // ensure swiping with one touch and not pinching
+        // ensure sliding is enabled
+        if (event.touches.length > 1 ||
+>>>>>>> origin/master
             event.scale && event.scale !== 1 ||
             slider.slideIsDisabled) {
           return;
@@ -8653,6 +8929,7 @@ ionic.views.Slider = ionic.views.View.inherit({
             translate(circle(index + 1), delta.x + slidePos[circle(index + 1)], 0);
 
           } else {
+<<<<<<< HEAD
             // If the slider bounces, do the bounce!
             if(options.bouncing) {
               delta.x =
@@ -8671,6 +8948,17 @@ ionic.views.Slider = ionic.views.View.inherit({
                  delta.x = Math.max( -width * (slides.length - index - 1), delta.x);  //Set delta.x so we don't go past right screen
                }
              }
+=======
+
+            delta.x =
+              delta.x /
+                ( (!index && delta.x > 0 ||         // if first slide and sliding left
+                  index == slides.length - 1 &&     // or if last slide and sliding right
+                  delta.x < 0                       // and if sliding at all
+                ) ?
+                ( Math.abs(delta.x) / width + 1 )      // determine resistance level
+                : 1 );                                 // no resistance if false
+>>>>>>> origin/master
 
             // translate 1:1
             translate(index - 1, delta.x + slidePos[index - 1], 0);
@@ -8760,6 +9048,7 @@ ionic.views.Slider = ionic.views.View.inherit({
         }
 
         // kill touchmove and touchend event listeners until touchstart called again
+<<<<<<< HEAD
         element.removeEventListener(touchMoveEvent, events, false);
         element.removeEventListener(mouseMoveEvent, events, false);
 
@@ -8768,6 +9057,16 @@ ionic.views.Slider = ionic.views.View.inherit({
 
         document.removeEventListener(touchEndEvent, events, false);
         document.removeEventListener(mouseEndEvent, events, false);
+=======
+        if(browser.touch) {
+          element.removeEventListener('touchmove', events, false);
+          element.removeEventListener('touchend', events, false);
+        } else {
+          element.removeEventListener('mousemove', events, false);
+          element.removeEventListener('mouseup', events, false);
+          document.removeEventListener('mouseup', events, false);
+        }
+>>>>>>> origin/master
 
         options.onDragEnd && options.onDragEnd();
       },
@@ -8869,8 +9168,12 @@ ionic.views.Slider = ionic.views.View.inherit({
       if (browser.addEventListener) {
 
         // remove current event listeners
+<<<<<<< HEAD
         element.removeEventListener(touchStartEvent, events, false);
         element.removeEventListener(mouseStartEvent, events, false);
+=======
+        element.removeEventListener('touchstart', events, false);
+>>>>>>> origin/master
         element.removeEventListener('webkitTransitionEnd', events, false);
         element.removeEventListener('msTransitionEnd', events, false);
         element.removeEventListener('oTransitionEnd', events, false);
@@ -8898,8 +9201,16 @@ ionic.views.Slider = ionic.views.View.inherit({
       if (browser.addEventListener) {
 
         // set touchstart event on element
+<<<<<<< HEAD
         element.addEventListener(touchStartEvent, events, false);
         element.addEventListener(mouseStartEvent, events, false);
+=======
+        if (browser.touch) {
+          element.addEventListener('touchstart', events, false);
+        } else {
+          element.addEventListener('mousedown', events, false);
+        }
+>>>>>>> origin/master
 
         if (browser.transitions) {
           element.addEventListener('webkitTransitionEnd', events, false);
@@ -8924,6 +9235,7 @@ ionic.views.Slider = ionic.views.View.inherit({
 
 })(ionic);
 
+<<<<<<< HEAD
 /*eslint space-after-keywords: 0*/
 
 /**
@@ -13152,6 +13464,8 @@ ionic.views.Slider = ionic.views.View.inherit({
     ionic.views.Swiper = Swiper;
 })();
 
+=======
+>>>>>>> origin/master
 (function(ionic) {
 'use strict';
 

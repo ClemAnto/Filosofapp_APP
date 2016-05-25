@@ -1,5 +1,6 @@
 {
   "name": "FilosofApp",
+<<<<<<< HEAD
   "app_id": "9794da07",
   "browsers": [
     {
@@ -8,4 +9,7 @@
       "version": "12.41.296.5"
     }
   ]
+=======
+  "app_id": "9794da07"
+>>>>>>> origin/master
 }

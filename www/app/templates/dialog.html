@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div ng-controller="DialogCtrl" class="viewport dialog {{currentScene.id}} {{$root.animation}}" on-swipe-left="goNextPage()">
 
     <div class="bg-cover" style="background-image: url('img/{{currentScene.background}}')">
@@ -15,11 +16,26 @@
                     class="bubble"
                     ng-class="currentDialog.textClass"
                     ng-click="goNextPage()"
+=======
+<div ng-controller="DialogCtrl" class="viewport dialog {{currentScene.id}}">
+
+    <div class="bg-cover" style="background-image: url('img/{{currentScene.background}}')">
+
+        <div class="bubble-position" ng-class="currentDialog.positionClass">
+            <div    ng-show="currentDialog.text"
+                    class="bubble"
+                    ng-class="currentDialog.textClass"
+                    ng-click="(currentDialog.exitType == 'dialog' ? goNextDialog : goScene)()"
+>>>>>>> origin/master
                     ng-bind-html="currentDialog.text">
             </div>
         </div>
 
+<<<<<<< HEAD
         <div ng-if="(currentDialog.exitType || DEFAULT.exitType) == 'dialog'">
+=======
+        <div ng-if="currentDialog.exitType == 'dialog'">
+>>>>>>> origin/master
 
             <div    class="video-container"
                     ng-init="minimizeVideo=true"
@@ -36,6 +52,7 @@
                         width="320"
                         height="200"></iframe>
 
+<<<<<<< HEAD
                 <button ng-show="!minimizeVideo" class="button button-block button-clear button-next" ng-class="currentDialog.nextClass || DEFAULT.nextClass" ng-click="goNextPage()">{{currentDialog.nextLabel || DEFAULT.nextLabel}}</button>
             </div>
 
@@ -49,6 +66,28 @@
             <button class="button button-dark" ng-class="currentDialog.choiceClass" ng-disabled="data.choiceSelected == null" ng-click="goToChoice()">{{currentDialog.choiceLabel}}</button>
         </div>
 
+=======
+                <button class="button button-block button-clear button-next" ng-class="currentDialog.nextClass" ng-click="(currentDialog.exitType == 'dialog' ? goNextDialog : goScene)()">{{currentDialog.nextLabel}}</button>
+            </div>
+
+            <!--
+            <button class="button button-dark" ng-class="currentDialog.nextClass" ng-click="goNextDialog()">{{currentDialog.nextLabel}}</button>-->
+        </div>
+
+        <div class="choices" ng-if="currentDialog.exitType == 'choise'">
+            <div ng-repeat="choise in currentDialog.choises track by $index">
+                <ion-radio ng-model="data.choiceSelected" ng-value="choise.nextDialog">{{choise.text}}</ion-radio>
+            </div>
+
+            <button class="button button-dark" ng-class="currentDialog.choiseClass" ng-disabled="data.choiceSelected == null" ng-click="goToChoise()">{{currentDialog.choiseLabel}}</button>
+        </div>
+
+        <!--
+        <div ng-if="currentDialog.exitType == 'scene'">
+            <button class="button button-dark" ng-class="currentDialog.sceneClass" ng-click="goScene()">{{currentDialog.sceneLabel}}</button>
+        </div>
+        -->
+>>>>>>> origin/master
 
     </div>
 

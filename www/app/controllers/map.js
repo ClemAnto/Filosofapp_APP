@@ -1,9 +1,14 @@
 angular.module('filosofapp')
 
+<<<<<<< HEAD
     .controller('MapCtrl', function(PLACES, $log, $rootScope, $scope, $ionicPopup, $state, $ionicNavBarDelegate, $ionicHistory, $ionicScrollDelegate, Animation, Config) {
         
         $ionicNavBarDelegate.showBackButton(false);
         $scope.animation = null;
+=======
+    .controller('MapCtrl', ['PLACES', '$log', '$rootScope', '$scope', '$state', '$ionicHistory', function(PLACES, $log, $rootScope, $scope, $state, $ionicHistory) {
+
+>>>>>>> origin/master
         $ionicHistory.clearHistory();
         $ionicHistory.nextViewOptions({
             disableBack: true
@@ -17,6 +22,7 @@ angular.module('filosofapp')
         }
 
         $scope.goPlace = function(placeId) {
+<<<<<<< HEAD
             if ($scope.checkPlaceLicense(placeId)) {
                 $ionicScrollDelegate.$getByHandle('viewport').zoomTo(2, true);
                 Animation.play("map-out", function() {
@@ -63,3 +69,9 @@ angular.module('filosofapp')
         });
 
     });
+=======
+            $state.go('place', { placeId: placeId, sceneId: PLACES[placeId].defaultScene });
+        };
+
+    }]);
+>>>>>>> origin/master

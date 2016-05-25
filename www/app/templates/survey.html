@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <div ng-controller="SurveyCtrl" class="viewport survey {{$root.animation}}" on-swipe-left="goNextPage()">
+=======
+<div ng-controller="SurveyCtrl" class="viewport survey">
+>>>>>>> origin/master
 
     <div class="bg-cover" style="background-image:url('img/{{currentScene.background}}')">
 
@@ -11,7 +15,10 @@
             <button ng-show="!showingResult" class="button button-dark" ng-class="currentQuestion.answerClass" ng-disabled="data.answerSelected == null" ng-click="showResult()">{{currentQuestion.answerLabel}}</button>
 
             <div ng-show="showingResult" class="result"><h4>{{data.answerSelected.textAfter}}</h4></div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
             <button ng-show="showingResult" class="button button-dark" ng-class="currentQuestion.answerClass" ng-disabled="!data.answerSelected" ng-click="goNextQuestion()">Avanti</button>
         </div>
 
